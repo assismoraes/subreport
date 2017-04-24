@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-24T15:35:39 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87d8d8cc-4cad-4d76-ab5f-884a91d18944">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SRAdapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sistemascatce.aluno.matricula,
+	sistemascatce.aluno.id,
+	sistemascatce.aluno.pessoa_id
+FROM sistemascatce.aluno
+LIMIT 10]]>
+	</queryString>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="id" class="java.lang.Long"/>
+	<field name="pessoa_id" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="580" height="79" uuid="699c42bc-0df4-4d77-bc3d-bb0040f28862"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Sub Relatório]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="84" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="10" width="112" height="20" uuid="5345fc90-f57d-498c-b0a4-6cf53b91615d"/>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="9" width="190" height="20" uuid="4082927e-3a43-444d-bfa7-3b31e7968dea"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="10" width="150" height="20" uuid="962082d4-b01c-414c-8cb5-426095250a97"/>
+				<textFieldExpression><![CDATA[$F{pessoa_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="9" width="50" height="20" uuid="d5a65522-b161-4091-9db6-ba054e757e1d"/>
+				<text><![CDATA[matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="9" width="18" height="20" uuid="e217a724-fd78-47b2-a80c-16d125449e8d"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="9" width="50" height="20" uuid="696a46af-5969-4371-ad25-a669c4b2800a"/>
+				<text><![CDATA[pessoa_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="36" height="20" uuid="85570377-d125-4b79-ba0b-af1308a0a72f"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
