@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-04-24T15:35:39 -->
+<!-- 2017-04-24T16:16:37 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87d8d8cc-4cad-4d76-ab5f-884a91d18944">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SRAdapter"/>
@@ -35,7 +35,7 @@ LIMIT 10]]>
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="84" splitType="Stretch">
+		<band height="72" splitType="Stretch">
 			<textField>
 				<reportElement x="50" y="10" width="112" height="20" uuid="5345fc90-f57d-498c-b0a4-6cf53b91615d"/>
 				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
@@ -60,10 +60,14 @@ LIMIT 10]]>
 				<reportElement x="370" y="9" width="50" height="20" uuid="696a46af-5969-4371-ad25-a669c4b2800a"/>
 				<text><![CDATA[pessoa_id]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="0" y="30" width="36" height="20" uuid="85570377-d125-4b79-ba0b-af1308a0a72f"/>
-				<text><![CDATA[Nome:]]></text>
-			</staticText>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="40" width="570" height="20" uuid="e6815eb7-8061-40b4-9b03-3a757e9024d1"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{pessoa_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["sub.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>
